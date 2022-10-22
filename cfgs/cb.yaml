@@ -1,0 +1,49 @@
+dataset:
+  dataset_name: "cb"
+  metric_set:
+    - "ACC"
+    - "Classification-F1"
+  label_tokens: 'entailment contradiction neutral'
+  max_seq_l: 480
+  data_dir: "../datasets/"
+  dataset_decoder_max_length: 10
+  data_processor: "super_glue.cb"
+model:
+  model: "t5-lm"
+  model_name_or_path: "google/t5-base-lm-adapt"
+  use_cuda: True
+  model_parallelize: True
+  tune_plm: False
+  plm_eval_mode: True
+  template: "../verbalizer_template/cb_tem.txt"
+  template_id: 0
+  verbalizer: "../verbalizer_template/cb_vb.txt"
+  verbalizer_choice: 0
+test:
+  eval_on_test: False
+  batch_size: 32
+  shuffle_data: false
+prompt:
+  num_soft_tokens: 0
+  num_cq_tokens: 100
+  init_from_vocab: True
+CQ:
+  temp: 100
+  num_codebook_samples: 10
+  commitment_cost: 0.1
+  identifier: "D32L2H4F64" #just the name that gets appended to ckpts file as identifier
+train:
+  seed: 100
+  batch_size: 32
+  num_training_steps: 30000
+  shuffle_data: true
+  lr_soft_prompt: 0.3
+  lr_cq_prompt: 0.0001
+  eval_every_steps: -1 #-1 denotes eval after every epoch
+  num_codes: -1 #means 10*num_cq_prompts
+  early_stop: 20
+  optimizer: Adafactor
+result:
+  result_path: "../results/cb.txt"
+
+

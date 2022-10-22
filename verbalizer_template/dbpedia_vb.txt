@@ -1,0 +1,14 @@
+{"text": "company"}
+{"text": "school"}
+{"text": "artist"}
+{"text": "athlete"}
+{"text": "politics"}
+{"text": "transportation"}
+{"text": "building"}
+{"text": "river"}
+{"text": "village"}
+{"text": "animal"}
+{"text": "plant"}
+{"text": "album"}
+{"text": "film"}
+{"text": "book"}

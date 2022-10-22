@@ -1,0 +1,2 @@
+{"text": "bad"}
+{"text": "good"}

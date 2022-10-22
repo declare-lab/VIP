@@ -1,0 +1,1 @@
+{"placeholder": "text_a", "shortenable":True}. In summary, the movie was {"mask"}.
